@@ -1,0 +1,102 @@
+/* =======================================================================
+   style.css – MemeCon / GazaAid 50
+   ======================================================================= */
+
+:root{
+  --bg:#0d0d0d;--fg:#f5f5f5;
+  --primary:#ffd166;--secondary:#06d6a0;
+  --danger:#ef476f;--danger-dark:#f78c6c;
+  --card:#1a1a1a;
+}
+
+*{box-sizing:border-box}
+body{margin:0;padding:0;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:var(--bg);color:var(--fg);line-height:1.6}
+
+/* ---------- Header ---------- */
+header{
+  position:fixed;top:0;left:0;right:0;padding:1rem 2rem;
+  display:flex;justify-content:center;align-items:center;
+  background:rgba(0,0,0,.8);z-index:1000;
+}
+header h1{margin:0;font-size:1.5rem;color:var(--primary)}
+header h1 a{color:inherit;text-decoration:none}
+.menu-toggle{
+  position:absolute;left:1rem;top:1rem;font-size:1.8rem;
+  background:none;border:none;color:var(--fg);cursor:pointer;
+}
+
+/* ---------- Sidebar ---------- */
+nav.sidebar{
+  position:fixed;top:0;left:-220px;width:200px;height:100%;
+  background:var(--card);padding-top:60px;transition:left .3s;z-index:2000
+}
+nav.sidebar.open{left:0}
+nav.sidebar ul{display:flex;flex-direction:column;gap:.5rem;margin:0;padding:0;list-style:none}
+nav.sidebar a{display:block;padding:1rem 1.25rem;font-weight:600;color:var(--fg);text-decoration:none}
+nav.sidebar a:hover{background:#141414;color:var(--primary)}
+nav.sidebar a.active{background:#141414;color:var(--primary)}
+
+/* ---------- Generic sections ---------- */
+.section{padding:5rem 2rem 3rem;margin-top:4rem}
+.section h2{color:var(--primary);font-size:2rem;margin-bottom:1rem}
+.section p{max-width:800px;margin:0 auto 1.5rem}
+
+/* ---------- Feature cards ---------- */
+.features{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:2rem}
+.feature{background:var(--card);padding:1.5rem;border-radius:8px;display:flex;flex-direction:column}
+.feature h3{color:var(--secondary);margin:0 0 .5rem}
+.feature a.button-link{margin-top:auto}
+
+/* ---------- Buttons ---------- */
+a.button-link,button{
+  display:inline-block;text-align:center;
+  background:var(--danger);color:var(--bg);
+  padding:.75rem 1.5rem;border:none;border-radius:4px;
+  font-weight:700;cursor:pointer;transition:background .3s;text-decoration:none
+}
+a.button-link:hover,button:hover{background:var(--danger-dark)}
+
+/* ---------- Purpose ---------- */
+.purpose-message h2{text-align:center;color:var(--secondary);font-size:2.2rem}
+.purpose-message p{font-size:1.3rem;font-weight:700;text-align:center;max-width:900px;margin:0 auto 3rem}
+.purpose-message .highlight{color:var(--primary)}
+
+/* ---------- Tab switcher ---------- */
+.tab-buttons{display:flex;gap:.5rem;margin-bottom:1.5rem}
+.tab-btn{background:var(--card);color:var(--fg);border:1px solid #333;padding:.6rem 1.25rem;border-radius:4px;font-weight:600;cursor:pointer;transition:background .25s}
+.tab-btn:hover{background:#141414}.tab-btn.active{background:var(--secondary);color:var(--bg);border-color:var(--secondary)}
+
+/* ---------- Roadmap list ---------- */
+ol.roadmap{counter-reset:phase;padding-left:1.25rem;margin:0 0 2rem}
+ol.roadmap>li{background:var(--card);border-radius:6px;position:relative;margin:1.25rem 0;padding:1rem 1.25rem;list-style:none}
+ol.roadmap>li::before{counter-increment:phase;content:counter(phase)'.';position:absolute;left:-1.6rem;top:1.1rem;color:var(--primary);font-weight:700}
+.roadmap-note{font-style:italic;color:#888}
+
+/* ---------- Timeline list ---------- */
+.timeline{counter-reset:step;padding-left:1.25rem;margin:0}
+.timeline li{background:var(--card);border-radius:6px;position:relative;margin:1.25rem 0;padding:1rem 1.25rem;list-style:none}
+.timeline li::before{counter-increment:step;content:counter(step)'.';position:absolute;left:-1.6rem;top:1.1rem;color:var(--primary);font-weight:700}
+.timeline time{font-weight:700;color:var(--secondary)}
+
+/* ---------- Completed milestones ---------- */
+.timeline li.done,.roadmap li.done{border-left:6px solid var(--secondary);opacity:.75}
+.timeline li.done::after,.roadmap li.done::after{content:"✓";position:absolute;right:1rem;top:1rem;color:var(--secondary);font-weight:700;font-size:1.2rem}
+
+/* ---------- Donate cards (donate.html) ---------- */
+.organizations{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-bottom:4rem}
+.organization-card{background:var(--card);padding:1.5rem;border-radius:8px;display:flex;flex-direction:column;height:100%}
+.organization-card h3{color:var(--secondary);margin:0}
+.organization-card p{margin:.75rem 0 0}
+.organization-card a.button-link{margin-top:auto;align-self:flex-start}
+
+/* ---------- Footer ---------- */
+footer{background:#141414;color:#888;text-align:center;padding:1rem}
+footer a{color:var(--secondary);font-weight:700}footer a:hover{color:#118ab2}
+
+/* ---------- Utility ---------- */
+.hidden{display:none}
+
+/* ---------- Responsive ---------- */
+@media(max-width:600px){
+  .purpose-message p{font-size:1.1rem}
+}

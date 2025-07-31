@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact – GazaAid 50</title>
+<link rel="stylesheet" href="style.css" />
+<style>
+  body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#0d0d0d;color:#f5f5f5}
+  a{color:#06d6a0} a:hover{color:#118ab2;text-decoration:underline}
+  header{position:fixed;top:0;left:0;right:0;background:#000a;padding:1rem 2rem;display:flex;justify-content:center;z-index:1000}
+  header h1{margin:0;color:#ffd166;font-size:1.5rem} header h1 a{color:inherit;text-decoration:none}
+  .menu-toggle{position:absolute;left:1rem;top:1rem;font-size:1.8rem;background:none;border:none;color:#fff;cursor:pointer}
+  nav.sidebar{position:fixed;top:0;left:-220px;width:200px;height:100%;background:#1a1a1a;padding-top:60px;transition:left .3s;z-index:2000}
+  nav.sidebar.open{left:0}
+  nav.sidebar ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.5rem}
+  nav.sidebar a{display:block;padding:1rem 1.25rem;font-weight:600;color:#f5f5f5}
+  nav.sidebar a:hover{background:#141414;color:#ffd166}
+  .section{padding:5rem 2rem 3rem}
+  label{display:block;margin:.75rem 0 .25rem}
+  input,textarea{width:100%;padding:.6rem;border-radius:4px;border:1px solid #333;background:#1a1a1a;color:#f5f5f5}
+  button{margin-top:1rem;background:#ef476f;color:#0d0d0d;border:none;padding:.75rem 1.25rem;border-radius:4px;font-weight:700;cursor:pointer}
+  button:hover{background:#f78c6c}
+  #thankyou{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#000c;backdrop-filter:blur(2px);visibility:hidden;opacity:0;transition:.25s}
+  #thankyou.show{visibility:visible;opacity:1}
+  #thankyou div{background:#1a1a1a;padding:2rem;border-radius:8px;text-align:center}
+  footer{background:#141414;color:#888;text-align:center;padding:1rem}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>emailjs.init('ufDSoWj3FYvzshLyf');</script>
+</head>
+<body>
+<header>
+  <button id="menu-toggle" class="menu-toggle">&#9776;</button>
+  <h1><a href="index.html">MemeCon · GazaAid 50</a></h1>
+</header>
+
+<nav id="sidebar" class="sidebar">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#roadmap">Future Roadmap</a></li>
+    <li><a href="index.html#token">GazaAid 50 Token</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="section">
+  <h2>Contact Us</h2>
+  <p>Send a message – we reply within 24‑48 hours.</p>
+
+  <form id="contact-form">
+    <label>Title / Subject</label>
+    <input name="title" required />
+
+    <label>Name</label>
+    <input name="name" required />
+
+    <label>Email</label>
+    <input type="email" name="email" required />
+
+    <label>Message</label>
+    <textarea name="message" rows="5" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<div id="thankyou"><div>
+  <h3>Thank you!</h3>
+  <p>Your message has been sent.<br>We’ll get back to you within 24‑48 hours.</p>
+  <button onclick="document.getElementById('thankyou').classList.remove('show')">Close</button>
+</div></div>
+
+<footer>
+  <p>© 2025 MemeCon. All rights reserved.</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const btn=document.getElementById('menu-toggle');
+  const sidebar=document.getElementById('sidebar');
+  btn.addEventListener('click',()=>sidebar.classList.toggle('open'));
+  btn.addEventListener('mouseover',()=>sidebar.classList.add('open'));
+  sidebar.addEventListener('mouseleave',()=>sidebar.classList.remove('open'));
+  sidebar.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>sidebar.classList.remove('open')));
+
+  const form=document.getElementById('contact-form');
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    emailjs.sendForm('service_73ydohh','template_m9z08cn',form)
+      .then(()=>{document.getElementById('thankyou').classList.add('show');form.reset();})
+      .catch(()=>alert('Sending failed. Please try again later.'));
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MemeCon · GazaAid 50 ($GAZA)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <button id="menu-toggle" class="menu-toggle">&#9776;</button>
+  <h1><a href="index.html">MemeCon · GazaAid 50 ($GAZA)</a></h1>
+</header>
+
+<nav id="sidebar" class="sidebar">
+  <ul>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="#purpose">Purpose</a></li>
+    <li><a href="#roadmap">Roadmap / Schedule</a></li>
+    <li><a href="coin.html">GazaAid 50 Token</a></li>
+    <li><a href="timeline.html">Timeline Page</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ── Feature cards ── -->
+<section class="section features">
+  <div class="feature">
+    <h3>About MemeCon</h3>
+    <p>Learn about our convention and mission to unify the meme community.</p>
+    <a class="button-link" href="about.html">Learn More</a>
+  </div>
+
+  <div class="feature">
+    <h3>Donate &amp; Impact</h3>
+    <p>50 % of profits will be donated to Gaza relief organisations.</p>
+    <a class="button-link" href="donate.html">Donate</a>
+  </div>
+
+  <div class="feature">
+    <h3>GazaAid 50 Token ($GAZA)</h3>
+    <p>Solana‑based token (launching soon) that routes half its net profits to humanitarian relief.</p>
+    <a class="button-link" href="coin.html">Token Details</a>
+  </div>
+
+  <div class="feature">
+    <h3>Roadmap &amp; Schedule</h3>
+    <p>See our future phases and milestone achievements.</p>
+    <a class="button-link" href="#roadmap">View Now</a>
+  </div>
+</section>
+
+<!-- ── Purpose blurb ── -->
+<section id="purpose" class="section purpose-message">
+  <h2>Our Purpose</h2>
+  <p>
+    <strong>
+      This project invites anyone to support humanitarian relief in Gaza while
+      they earn. By holding the $GAZA token you can profit, and we encourage
+      everyone who gains to donate <span class="highlight">50 %</span> of those
+      profits to our partner NGOs. Engage, contribute ideas—this is a transparent
+      community effort, not a scam or rug‑pull.
+    </strong>
+  </p>
+</section>
+
+<!-- ── Roadmap / Schedule switcher ── -->
+<section id="roadmap" class="section">
+  <h2>Future Roadmap &amp; Milestone Schedule</h2>
+
+  <div class="tab-buttons">
+    <button id="btn-roadmap" class="tab-btn active">Future Roadmap</button>
+    <button id="btn-schedule" class="tab-btn">Milestone Schedule</button>
+  </div>
+
+  <!-- Roadmap content -->
+  <div id="roadmap-content">
+    <ol class="roadmap">
+      <li><strong>Phase 1 – 31 Jul 2025 · Website Launch</strong> – Kick‑off &amp; team recruitment.</li>
+      <li><strong>Phase 2 – 11 Aug 2025 · Token Launch</strong> – $GAZA trading opens; ads start 7 Aug.</li>
+      <li><strong>Phase 3 – 12 Aug 2025 · Community Giveaway</strong> – Free token airdrop.</li>
+      <li><strong>Phase 4 – Q4 2025 · 50 % Profit Donation Event</strong> – Livestream NGO transfers.</li>
+      <li><strong>Phase 5 – 2026 · Partnerships &amp; Expansion</strong></li>
+    </ol>
+    <p class="roadmap-note">Timeline adjusts as milestones lock—stay tuned.</p>
+  </div>
+
+  <!-- Schedule content -->
+  <div id="schedule-content" class="hidden">
+    <ol class="timeline">
+      <li class="done"><time datetime="2025-07-29">29 Jul 2025</time> · Telegram group, X profile &amp; community channels created.</li>
+      <li class="done"><time datetime="2025-07-31">31 Jul 2025</time> · Official website launched.</li>
+      <li><time datetime="2025-08-05">05 Aug 2025</time> · Achieved 300+ Telegram members—team effort recognised.</li>
+      <li><time datetime="2025-08-06">06 Aug 2025</time> · Launch of paid advertising campaign.</li>
+      <li><time datetime="2025-08-09">09 Aug 2025</time> · Target engagement day on X (Twitter); community push.</li>
+      <li><time datetime="2025-08-11">11 Aug 2025</time> · DEX screen live · 10× website update · intensive promotion (AI volume simulation).</li>
+      <li><time datetime="2025-08-12">12 Aug 2025</time> · $GAZA community giveaway begins.</li>
+      <li><time datetime="2025-08-15">15 Aug 2025</time> · Giveaway closes – 10‑20 $GAZA tokens awarded to early supporters.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ── Community links ── -->
+<section id="community" class="section">
+  <h2>Connect With Us</h2>
+  <ul class="social-links">
+    <li><a href="https://x.com/mk3098305598009" target="_blank" rel="noopener">X / Twitter</a></li>
+    <li><a href="https://t.me/+v6GqN9yhUP5mOGFh" target="_blank" rel="noopener">Telegram</a></li>
+  </ul>
+  <p>Questions? <a href="contact.html">Get in touch</a>.</p>
+</section>
+
+<footer>
+  <p>© 2025 MemeCon. All rights reserved.</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+
+  /* Sidebar */
+  const btn=document.getElementById('menu-toggle');
+  const sidebar=document.getElementById('sidebar');
+  btn.addEventListener('click',()=>sidebar.classList.toggle('open'));
+  btn.addEventListener('mouseover',()=>sidebar.classList.add('open'));
+  sidebar.addEventListener('mouseleave',()=>sidebar.classList.remove('open'));
+  sidebar.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>sidebar.classList.remove('open')));
+
+  /* Tab switcher */
+  const btnRoadmap=document.getElementById('btn-roadmap');
+  const btnSchedule=document.getElementById('btn-schedule');
+  const roadmapContent=document.getElementById('roadmap-content');
+  const scheduleContent=document.getElementById('schedule-content');
+
+  btnRoadmap.onclick=()=>{
+    btnRoadmap.classList.add('active');btnSchedule.classList.remove('active');
+    roadmapContent.classList.remove('hidden');scheduleContent.classList.add('hidden');
+  };
+  btnSchedule.onclick=()=>{
+    btnSchedule.classList.add('active');btnRoadmap.classList.remove('active');
+    scheduleContent.classList.remove('hidden');roadmapContent.classList.add('hidden');
+  };
+});
+</script>
+</body>
+</html>
