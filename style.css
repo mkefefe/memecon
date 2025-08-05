@@ -189,6 +189,11 @@ footer a:hover{color:#118ab2}
   margin:0 auto;
 }
 
+/* Position the buy button below the countdown */
+.hero #buy-btn{
+  margin-top:1rem;
+}
+
 /* ---------- CTA Section ---------- */
 .cta{
   text-align:center;

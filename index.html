@@ -37,6 +37,8 @@
     <div class="time"><span id="seconds">00</span><span class="label">Seconds</span></div>
   </div>
   <p class="launch-info">Our token goes live on <strong>August 11, 2025 at 4:00 PM CT</strong>. Join the countdown and be part of something big!</p>
+  <!-- Buy button: Disabled until launch; behaviour controlled via script -->
+  <button id="buy-btn" class="button-link">Buy</button>
 </section>
 
 <!-- ── Feature cards ── -->
@@ -89,15 +91,7 @@
   </div>
 </section>
 
-<!-- ── Call to Action ── -->
-<section id="cta" class="section cta">
-  <h2>Get Involved</h2>
-  <p>Interested in our mission? Learn more or contribute directly.</p>
-  <div class="cta-buttons">
-    <a class="button-link" href="about.html">Learn More</a>
-    <a class="button-link" href="donate.html">Donate</a>
-  </div>
-</section>
+<!-- CTA removed: buttons moved into feature cards -->
 
 <!-- ── Community links ── -->
 <section id="community" class="section">
@@ -114,10 +108,14 @@
     <div class="feature">
       <h3>About MemeCon</h3>
       <p>Learn about our convention and mission to unify the meme community.</p>
+      <!-- Move CTA: Learn More button back into the corresponding card -->
+      <a class="button-link" href="about.html">Learn More</a>
     </div>
     <div class="feature">
       <h3>Donate &amp; Impact</h3>
       <p>50% of profits will be donated to Gaza relief organisations.</p>
+      <!-- Move CTA: Donate button back into the corresponding card -->
+      <a class="button-link" href="donate.html">Donate</a>
     </div>
     <div class="feature">
       <h3>GazaAid 50 Token ($GAZA)</h3>
@@ -166,9 +164,10 @@ document.addEventListener('DOMContentLoaded',()=>{
   const hoursEl=document.getElementById('hours');
   const minutesEl=document.getElementById('minutes');
   const secondsEl=document.getElementById('seconds');
+  // Buy button element and launch date accessible to both countdown and buy logic
+  const buyBtn=document.getElementById('buy-btn');
+  const launchDate=new Date('2025-08-11T16:00:00-05:00');
   function updateCountdown(){
-    // Launch date in Central Time (America/Chicago). On Aug 11 2025, CT is CDT (UTC-05:00)
-    const launchDate=new Date('2025-08-11T16:00:00-05:00');
     const now=new Date();
     let diff=launchDate - now;
     if(diff < 0){ diff = 0; }
@@ -182,8 +181,26 @@ document.addEventListener('DOMContentLoaded',()=>{
     minutesEl.textContent=String(minutes).padStart(2,'0');
     secondsEl.textContent=String(seconds).padStart(2,'0');
   }
+  // Update buy button state depending on countdown
+  function updateBuyButton(){
+    const now=new Date();
+    if(launchDate - now > 0){
+      // Not launched yet
+      buyBtn.onclick=()=>alert('Token not launched yet!');
+      buyBtn.setAttribute('disabled',false);
+    }else{
+      // Launch occurred – redirect to pump.fun when clicked
+      buyBtn.onclick=()=>{
+        window.open('https://pump.fun','_blank');
+      };
+    }
+  }
   updateCountdown();
-  setInterval(updateCountdown,1000);
+  updateBuyButton();
+  setInterval(()=>{
+    updateCountdown();
+    updateBuyButton();
+  },1000);
 });
 </script>
 </body>
