@@ -3,65 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GazaAid 50 Token ($GAZA)</title>
+  <title>GazaAid 50 Token ($GAZA) – MemeCon</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body id="token-page">
+  <!-- Header with logo and title -->
+  <header>
+    <button id="menu-toggle" class="menu-toggle">&#9776;</button>
+    <img src="logo.png" alt="GazaAid50 Logo" class="logo" />
+    <h1><a href="index.html">MemeCon · GazaAid 50 ($GAZA)</a></h1>
+  </header>
 
-<header>
-  <button id="menu-toggle" class="menu-toggle">&#9776;</button>
-  <h1><a href="index.html">MemeCon · GazaAid 50 ($GAZA)</a></h1>
-</header>
+  <!-- Sidebar navigation -->
+  <nav id="sidebar" class="sidebar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#purpose">Purpose</a></li>
+      <li><a href="index.html#roadmap">Roadmap / Schedule</a></li>
+      <li><a href="coin.html" class="active">GazaAid 50 Token</a></li>
+      <li><a href="timeline.html">Timeline Page</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-<nav id="sidebar" class="sidebar">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="index.html#roadmap">Future Roadmap</a></li>
-    <li><a href="coin.html" class="active">GazaAid 50 Token</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+  <main class="section">
+    <h2>About GazaAid 50 Token</h2>
+    <p>
+      GazaAid 50 ($GAZA) is a community‑driven Solana token created to funnel half
+      of all net profits into humanitarian relief for Gaza. Launch details and
+      tokenomics are still being finalised—watch this space for the official
+      announcement.
+    </p>
 
-<!-- ‑‑‑ Main content ‑‑‑ -->
-<section class="section">
-  <h2>About GazaAid 50 Token</h2>
-  <p>
-    GazaAid 50 ($GAZA) is a community‑driven Solana token created to funnel half of all net
-    profits into humanitarian relief for Gaza. Launch details and tokenomics are still being finalised—watch this space for the official announcement.
-  </p>
-</section>
+    <h2>Two Ways You Can Help</h2>
+    <ol>
+      <li>
+        Donate directly: Skip the middle‑layer and give straight to our four
+        partner NGOs on the <a class="inline-link" href="donate.html">Donate</a> page.
+      </li>
+      <li>
+        Profit‑split wallet (coming soon): After launch, 50% of net profits will
+        be deposited into a public Phantom wallet (24/7 live balance). During
+        scheduled livestreams the entire balance will be distributed—25% each—to
+        those same four organisations.
+      </li>
+    </ol>
 
-<section class="section">
-  <h2>Two Ways You Can Help</h2>
-  <ol>
-    <li><strong>Donate Directly:</strong> Skip the middle‑layer and give straight to our four partner
-        NGOs on the <a href="donate.html">Donate</a> page.</li>
-    <li><strong>Profit‑Split Wallet (coming soon):</strong> After launch, 50 % of net profits will be
-        deposited into a <em>public Phantom wallet</em> (24 / 7 live balance). During scheduled
-        livestreams the entire balance will be distributed—<strong>25 % each</strong>—to those same
-        four organisations.</li>
-  </ol>
-</section>
+    <h2>Launch &amp; Liquidity</h2>
+    <p>
+      When the $GAZA token launches on 11 Aug 2025 at 4:00 PM CT, the total
+      supply will be capped at <strong>1 billion tokens</strong>. To promote a healthy
+      ecosystem, <strong>10% of the supply will be burned</strong> at launch. Initial
+      liquidity will be provided with <strong>1 SOL</strong>, and the full contract
+      address (CA), audit and liquidity‑lock details will be published here.
+    </p>
+    <p>
+      Check back on launch day for the contract address and trading link.
+    </p>
+  </main>
 
-<section class="section">
-  <h2>Launch &amp; Liquidity</h2>
-  <p>Full contract address, audit link and liquidity‑lock details will be published here once the token is live—stay tuned.</p>
-</section>
+  <footer>
+    <p>© 2025 MemeCon. All rights reserved.</p>
+  </footer>
 
-<footer>
-  <p>© 2025 MemeCon. All rights reserved.</p>
-</footer>
-
-<script>
-document.addEventListener('DOMContentLoaded',()=>{
-  const btn=document.getElementById('menu-toggle');
-  const sidebar=document.getElementById('sidebar');
-  btn.addEventListener('click',()=>sidebar.classList.toggle('open'));
-  btn.addEventListener('mouseover',()=>sidebar.classList.add('open'));
-  sidebar.addEventListener('mouseleave',()=>sidebar.classList.remove('open'));
-  sidebar.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>sidebar.classList.remove('open')));
-});
-</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('menu-toggle');
+      const sidebar = document.getElementById('sidebar');
+      btn.addEventListener('click', () => sidebar.classList.toggle('open'));
+      btn.addEventListener('mouseover', () => sidebar.classList.add('open'));
+      sidebar.addEventListener('mouseleave', () => sidebar.classList.remove('open'));
+      sidebar.querySelectorAll('a').forEach(a =>
+        a.addEventListener('click', () => sidebar.classList.remove('open'))
+      );
+    });
+  </script>
 </body>
 </html>

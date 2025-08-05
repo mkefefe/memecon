@@ -64,6 +64,22 @@ a.button-link,button{
   padding:.75rem 1.5rem;border:none;border-radius:4px;
   font-weight:700;cursor:pointer;transition:background .3s;text-decoration:none
 }
+
+/* ---------- Inline links ---------- */
+/*
+ * Provide a class for in‑text links used on informational pages (e.g. coin.html).
+ * This class ensures that default browser styles (blue or purple) do not clash
+ * with the site palette. Use font weight for prominence and underline to
+ * differentiate inline links from buttons.
+ */
+.inline-link{
+  color:var(--secondary);
+  text-decoration:underline;
+  font-weight:600;
+}
+.inline-link:hover{
+  color:var(--primary);
+}
 a.button-link:hover,button:hover{background:var(--danger-dark)}
 
 /* ---------- Purpose ---------- */
@@ -131,6 +147,16 @@ footer a:hover{color:#118ab2}
   list-style:none;
   padding-left:0;
   margin-left:0;
+}
+
+/* Inline text links – used in token page for donate link */
+.inline-link{
+  color:var(--secondary);
+  text-decoration:none;
+  font-weight:600;
+}
+.inline-link:hover{
+  color:var(--primary);
 }
 
 /* ---------- Utility ---------- */

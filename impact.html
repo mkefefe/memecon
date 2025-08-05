@@ -1,271 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Impact</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Inline styles for fallback when external CSS isn’t loaded -->
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #f5f5f5;
-      background-color: #0d0d0d;
-      line-height: 1.6;
-    }
-    header {
-      background-color: rgba(0,0,0,0.8);
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 100;
-      /* Center the title in the header. The menu toggle will be positioned
-         absolutely. */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem 2rem;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 1.5rem;
-      color: #ffd166;
-    }
-
-    header h1 a {
-      color: inherit;
-      text-decoration: none;
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      /* Allow menu items to wrap onto multiple lines and apply consistent spacing */
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-    }
-    nav ul li {
-      margin: 0;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: #f5f5f5;
-      font-weight: bold;
-      transition: color 0.3s ease;
-      /* Increase nav font for better readability */
-      font-size: 0.85rem;
-    }
-
-    /* Hide the default horizontal navigation; the links live in a sidebar */
-    header nav {
-      display: none;
-    }
-    nav ul li a:hover {
-      color: #ffd166;
-    }
-
-    /* Styles for the menu toggle (hamburger) button */
-    .menu-toggle {
-      background: none;
-      border: none;
-      color: #f5f5f5;
-      font-size: 1.5rem;
-      cursor: pointer;
-      position: absolute;
-      left: 1rem;
-      top: 1rem;
-    }
-
-    /* Sidebar styles */
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: -250px;
-      width: 200px;
-      height: 100%;
-      background-color: #1a1a1a;
-      z-index: 999;
-      padding-top: 60px;
-      transition: left 0.3s ease;
-    }
-    .sidebar.open {
-      left: 0;
-    }
-    .sidebar ul {
-      /* Arrange sidebar links in a vertical list with equal spacing.
-         Using a column flexbox prevents links from appearing side by
-         side when fallback styles are loaded without the external
-         stylesheet. */
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .sidebar ul li {
-      margin: 0;
-    }
-    .sidebar ul li a {
-      display: block;
-      padding: 1rem 1.5rem;
-      color: #f5f5f5;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.2s ease;
-    }
-    .sidebar ul li a:hover {
-      background-color: #141414;
-      color: #ffd166;
-    }
-    .section {
-      padding: 4rem 2rem;
-      margin-top: 4rem;
-    }
-    .section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #ffd166;
-    }
-    .section p {
-      max-width: 800px;
-      margin: 0 auto 1.5rem;
-    }
-    .organizations {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-
-      /* Provide space below the grid so that the explanatory paragraph
-         doesn’t overlap the donation cards */
-      margin-bottom: 2rem;
-
-      /* Create a new block formatting context to prevent margin collapse
-         with the following paragraph */
-      overflow: hidden;
-    }
-
-    /* Add space below the organizations grid before the following
-       explanatory paragraph so it doesn’t overlap the cards */
-    .organizations + p {
-      margin-top: 2rem;
-    }
-
-    .donate-note-section {
-      padding: 0 2rem 4rem;
-    }
-    .organization {
-      background-color: #1a1a1a;
-      padding: 1.5rem;
-      border-radius: 8px;
-    }
-    .organization h3 {
-      color: #06d6a0;
-      margin-top: 0;
-    }
-    .organization p {
-      margin: 0.5rem 0 0;
-    }
-    footer {
-      background-color: #141414;
-      color: #888;
-      text-align: center;
-      padding: 1rem;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Impact – GazaAid50</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body id="impact-page">
   <header>
-    <!-- Menu toggle button for opening the sidebar navigation -->
     <button id="menu-toggle" class="menu-toggle">&#9776;</button>
-    <h1><a href="index.html">MemeCon</a></h1>
+    <img src="logo.png" alt="GazaAid50 Logo" class="logo" />
+    <h1><a href="index.html">GazaAid50</a></h1>
   </header>
-  <!-- Sidebar navigation (hidden by default) -->
+
   <nav id="sidebar" class="sidebar">
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#schedule">Future&nbsp;Plan</a></li>
-      <li><a href="index.html#coin">Coin</a></li>
-      <li><a href="about.html">About&nbsp;Us</a></li>
+      <li><a href="index.html#purpose">Purpose</a></li>
+      <li><a href="index.html#roadmap">Roadmap / Schedule</a></li>
+      <li><a href="coin.html">GazaAid 50 Token</a></li>
+      <li><a href="timeline.html">Timeline Page</a></li>
+      <li><a href="about.html">About Us</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
-  <section class="section">
+  <main class="section">
     <h2>Our Impact &amp; Giving Plan</h2>
-    <p>Every purchase you make at MemeCon and every MemeCoin transaction helps us support vital humanitarian efforts. We’ve committed to donating 50&nbsp;% of all profits to organizations working on the ground in Gaza. Here’s how your support will help:</p>
+    <p>
+      Every purchase of the <strong>$GAZA</strong> token helps us support vital humanitarian
+      efforts. We’ve committed to donating <strong>50%</strong> of all net profits to
+      organizations working on the ground in Gaza. Here’s how your support makes
+      a difference:
+    </p>
     <div class="organizations">
       <div class="organization-card">
-        <div class="organization-content">
-          <h3>Palestine Children’s Relief Fund (PCRF)</h3>
-          <p>PCRF’s Gaza Relief and Recovery campaign supplies medical aid, treatment, food, clean water and necessities to affected families. They’re rebuilding healthcare facilities and funding trauma counseling and mental‑health services.</p>
-        </div>
-        <a href="https://www.pcrf.net/donate" class="button-link" target="_blank" rel="noopener">Donate</a>
+        <h3>Palestine Children’s Relief Fund (PCRF)</h3>
+        <p>Medical aid, food and trauma counselling for children.</p>
+        <a class="button-link" href="https://www.pcrf.net/donate" target="_blank" rel="noopener">Donate</a>
       </div>
       <div class="organization-card">
-        <div class="organization-content">
-          <h3>Save the Children</h3>
-          <p>Save the Children delivers food, hygiene kits and clean drinking water, treats malnutrition, operates health centers and provides education and psychosocial support to children in Gaza.</p>
-        </div>
-        <a href="https://www.savethechildren.org/us/where-we-work/west-bank-gaza" class="button-link" target="_blank" rel="noopener">Donate</a>
+        <h3>Save the Children</h3>
+        <p>Clean water, hygiene kits and malnutrition treatment.</p>
+        <a class="button-link" href="https://www.savethechildren.org/us/where-we-work/west-bank-gaza" target="_blank" rel="noopener">Donate</a>
       </div>
       <div class="organization-card">
-        <div class="organization-content">
-          <h3>Doctors Without Borders (MSF)</h3>
-          <p>MSF provides surgical care, physiotherapy, primary health care, vaccinations, mental‑health services and critical water and sanitation activities through local and international teams in Gaza.</p>
-        </div>
-        <a href="https://give.doctorswithoutborders.org/campaign/687007/donate" class="button-link" target="_blank" rel="noopener">Donate</a>
+        <h3>Doctors Without Borders (MSF)</h3>
+        <p>Surgical care, vaccinations and field hospitals.</p>
+        <a class="button-link" href="https://give.doctorswithoutborders.org/campaign/687007/donate" target="_blank" rel="noopener">Donate</a>
       </div>
       <div class="organization-card">
-        <div class="organization-content">
-          <h3>World Food Programme (WFP)</h3>
-          <p>WFP warns that more than half a million people in Gaza face famine‑like conditions and over 320,000 children are at risk of acute malnutrition. They are ready to deliver 30,000 metric tons of food each month into Gaza once safe access is granted.</p>
-        </div>
-        <a href="https://www.wfp.org/donate" class="button-link" target="_blank" rel="noopener">Donate</a>
+        <h3>World Food Programme (WFP)</h3>
+        <p>Emergency food parcels and nutrition for children.</p>
+        <a class="button-link" href="https://www.wfp.org/donate" target="_blank" rel="noopener">Donate</a>
       </div>
     </div>
-  </section>
-
-  <!-- Explanatory note moved outside of the donation cards section so it doesn’t
-       overlap the grid. -->
-  <section class="section donate-note-section">
-    <p>Want to contribute beyond MemeCoin? Visit these organizations’ official
-    websites to learn more and donate directly.</p>
-  </section>
+  </main>
 
   <footer>
-    <p>© 2025 MemeCon. All rights reserved.</p>
-    <p><a href="contact.html">Contact Us</a></p>
+    <p>© 2025 GazaAid50. All rights reserved.</p>
   </footer>
 
-  <!-- JavaScript to toggle the sidebar navigation -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var menuBtn = document.getElementById('menu-toggle');
-      var sidebar = document.getElementById('sidebar');
-      if (menuBtn && sidebar) {
-        // Toggle the sidebar when the menu button is clicked
-        menuBtn.addEventListener('click', function() {
-          sidebar.classList.toggle('open');
-        });
-        // Open the sidebar on hover over the menu button
-        menuBtn.addEventListener('mouseover', function() {
-          sidebar.classList.add('open');
-        });
-        // Close the sidebar when the pointer leaves the sidebar
-        sidebar.addEventListener('mouseleave', function() {
-          sidebar.classList.remove('open');
-        });
-        // Close the sidebar after clicking any link inside it
-        Array.prototype.forEach.call(sidebar.querySelectorAll('a'), function(link) {
-          link.addEventListener('click', function() {
-            sidebar.classList.remove('open');
-          });
-        });
-      }
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('menu-toggle');
+      const sidebar = document.getElementById('sidebar');
+      btn.addEventListener('click', () => sidebar.classList.toggle('open'));
+      btn.addEventListener('mouseover', () => sidebar.classList.add('open'));
+      sidebar.addEventListener('mouseleave', () => sidebar.classList.remove('open'));
+      sidebar.querySelectorAll('a').forEach(a =>
+        a.addEventListener('click', () => sidebar.classList.remove('open'))
+      );
     });
   </script>
 </body>

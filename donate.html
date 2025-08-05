@@ -1,73 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Donate – GazaAid 50 ($GAZA)</title>
-<link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate – GazaAid 50 ($GAZA)</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body id="donate-page">
+  <!-- Header -->
+  <header>
+    <button id="menu-toggle" class="menu-toggle">&#9776;</button>
+    <img src="logo.png" alt="GazaAid50 Logo" class="logo" />
+    <h1><a href="index.html">MemeCon · GazaAid 50 ($GAZA)</a></h1>
+  </header>
 
-<header>
-  <button id="menu-toggle" class="menu-toggle">&#9776;</button>
-  <h1><a href="index.html">MemeCon · GazaAid 50 ($GAZA)</a></h1>
-</header>
+  <!-- Sidebar navigation -->
+  <nav id="sidebar" class="sidebar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#purpose">Purpose</a></li>
+      <li><a href="index.html#roadmap">Roadmap / Schedule</a></li>
+      <li><a href="coin.html">GazaAid 50 Token</a></li>
+      <li><a href="timeline.html">Timeline Page</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-<nav id="sidebar" class="sidebar">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="index.html#roadmap">Future Roadmap</a></li>
-    <li><a href="index.html#token">GazaAid 50 Token ($GAZA)</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+  <main class="section">
+    <h2>Our Impact &amp; Giving Plan</h2>
+    <p>We donate <strong>50%</strong> of profits. Contribute directly below:</p>
 
-<section class="section">
-  <h2>Our Impact &amp; Giving Plan</h2>
-  <p>We donate 50 % of profits. Contribute directly below:</p>
-
-  <div class="organizations">
-    <!-- PCRF -->
-    <div class="organization-card">
-      <h3>Palestine Children’s Relief Fund (PCRF)</h3>
-      <p>Medical aid, food and trauma counselling for children.</p>
-      <a class="button-link" href="https://www.pcrf.net/donate" target="_blank" rel="noopener">Donate</a>
+    <div class="organizations">
+      <!-- PCRF -->
+      <div class="organization-card">
+        <h3>Palestine Children’s Relief Fund (PCRF)</h3>
+        <p>Medical aid, food and trauma counselling for children.</p>
+        <a class="button-link" href="https://www.pcrf.net/donate" target="_blank" rel="noopener">Donate</a>
+      </div>
+      <!-- Save the Children -->
+      <div class="organization-card">
+        <h3>Save the Children</h3>
+        <p>Clean water, hygiene kits and malnutrition treatment.</p>
+        <a class="button-link" href="https://www.savethechildren.org/us/where-we-work/west-bank-gaza" target="_blank" rel="noopener">Donate</a>
+      </div>
+      <!-- MSF -->
+      <div class="organization-card">
+        <h3>Doctors Without Borders (MSF)</h3>
+        <p>Surgical care, vaccinations and field hospitals.</p>
+        <a class="button-link" href="https://give.doctorswithoutborders.org/campaign/687007/donate" target="_blank" rel="noopener">Donate</a>
+      </div>
+      <!-- WFP -->
+      <div class="organization-card">
+        <h3>World Food Programme (WFP)</h3>
+        <p>Emergency food parcels and nutrition for children.</p>
+        <a class="button-link" href="https://www.wfp.org/donate" target="_blank" rel="noopener">Donate</a>
+      </div>
     </div>
-    <!-- Save the Children -->
-    <div class="organization-card">
-      <h3>Save the Children</h3>
-      <p>Clean water, hygiene kits and malnutrition treatment.</p>
-      <a class="button-link" href="https://www.savethechildren.org/us/where-we-work/west-bank-gaza" target="_blank" rel="noopener">Donate</a>
-    </div>
-    <!-- MSF -->
-    <div class="organization-card">
-      <h3>Doctors Without Borders (MSF)</h3>
-      <p>Surgical care, vaccinations and field hospitals.</p>
-      <a class="button-link" href="https://give.doctorswithoutborders.org/campaign/687007/donate" target="_blank" rel="noopener">Donate</a>
-    </div>
-    <!-- WFP -->
-    <div class="organization-card">
-      <h3>World Food Programme (WFP)</h3>
-      <p>Emergency food parcels and nutrition for children.</p>
-      <a class="button-link" href="https://www.wfp.org/donate" target="_blank" rel="noopener">Donate</a>
-    </div>
-  </div>
-</section>
+  </main>
 
-<footer>
-  <p>© 2025 MemeCon. All rights reserved.</p>
-</footer>
+  <footer>
+    <p>© 2025 MemeCon. All rights reserved.</p>
+  </footer>
 
-<script>
-document.addEventListener('DOMContentLoaded',()=>{
-  const btn=document.getElementById('menu-toggle');
-  const sidebar=document.getElementById('sidebar');
-  btn.addEventListener('click',()=>sidebar.classList.toggle('open'));
-  btn.addEventListener('mouseover',()=>sidebar.classList.add('open'));
-  sidebar.addEventListener('mouseleave',()=>sidebar.classList.remove('open'));
-  sidebar.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>sidebar.classList.remove('open')));
-});
-</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('menu-toggle');
+      const sidebar = document.getElementById('sidebar');
+      btn.addEventListener('click', () => sidebar.classList.toggle('open'));
+      btn.addEventListener('mouseover', () => sidebar.classList.add('open'));
+      sidebar.addEventListener('mouseleave', () => sidebar.classList.remove('open'));
+      sidebar.querySelectorAll('a').forEach(a =>
+        a.addEventListener('click', () => sidebar.classList.remove('open'))
+      );
+    });
+  </script>
 </body>
 </html>

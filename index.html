@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MemeCon · GazaAid 50 ($GAZA)</title>
+    <!-- Update title to use GazaAid50 only -->
+    <title>GazaAid50 ($GAZA)</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,7 +13,8 @@
   <button id="menu-toggle" class="menu-toggle">&#9776;</button>
   <!-- Site logo -->
   <img src="logo.png" alt="GazaAid50 Logo" class="logo" />
-  <h1><a href="index.html">MemeCon · GazaAid 50 ($GAZA)</a></h1>
+       <!-- Replace site name with GazaAid50 only -->
+       <h1><a href="index.html">GazaAid50 ($GAZA)</a></h1>
 </header>
 
 <nav id="sidebar" class="sidebar">
@@ -106,7 +108,7 @@
   <!-- ── Feature cards (relocated to bottom) ── -->
   <section class="section features">
     <div class="feature">
-      <h3>About MemeCon</h3>
+           <h3>About GazaAid50</h3>
       <p>Learn about our convention and mission to unify the meme community.</p>
       <!-- Move CTA: Learn More button back into the corresponding card -->
       <a class="button-link" href="about.html">Learn More</a>
@@ -129,9 +131,10 @@
     </div>
   </section>
 
-<footer>
-  <p>© 2025 MemeCon. All rights reserved.</p>
-</footer>
+     <footer>
+       <!-- Update copyright to use GazaAid50 brand -->
+       <p>© 2025 GazaAid50. All rights reserved.</p>
+     </footer>
 
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
@@ -185,9 +188,10 @@ document.addEventListener('DOMContentLoaded',()=>{
   function updateBuyButton(){
     const now=new Date();
     if(launchDate - now > 0){
-      // Not launched yet
-      buyBtn.onclick=()=>alert('Token not launched yet!');
-      buyBtn.setAttribute('disabled',false);
+      // Not launched yet – notify user of launch time
+      buyBtn.onclick=()=>{
+        alert('Token not launched yet! The $GAZA token launches on August 11, 2025 at 4:00 PM CT (UTC‑05:00).');
+      };
     }else{
       // Launch occurred – redirect to pump.fun when clicked
       buyBtn.onclick=()=>{

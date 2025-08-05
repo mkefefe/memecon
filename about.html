@@ -1,53 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>About Us – GazaAid 50 ($GAZA)</title>
-<link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About GazaAid50 ($GAZA)</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body id="about-page">
+  <!-- Header with menu toggle, logo and site title -->
+  <header>
+    <button id="menu-toggle" class="menu-toggle">&#9776;</button>
+    <img src="logo.png" alt="GazaAid50 Logo" class="logo" />
+    <h1><a href="index.html">GazaAid50 ($GAZA)</a></h1>
+  </header>
 
-<header>
-  <button id="menu-toggle" class="menu-toggle">&#9776;</button>
-  <h1><a href="index.html">MemeCon · GazaAid 50 ($GAZA)</a></h1>
-</header>
+  <!-- Sidebar navigation -->
+  <nav id="sidebar" class="sidebar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#purpose">Purpose</a></li>
+      <li><a href="index.html#roadmap">Roadmap / Schedule</a></li>
+      <li><a href="coin.html">GazaAid 50 Token</a></li>
+      <li><a href="timeline.html">Timeline Page</a></li>
+      <li><a href="about.html" class="active">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-<nav id="sidebar" class="sidebar">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="index.html#roadmap">Future Roadmap</a></li>
-    <li><a href="index.html#token">GazaAid 50 Token ($GAZA)</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+  <main class="section">
+    <h2>About GazaAid50</h2>
+    <p>
+      GazaAid50 unites crypto enthusiasts and humanitarian supporters under one
+      banner. Our mission is to leverage the power of decentralized finance to
+      deliver real‑world impact. We celebrate community‑driven initiatives and
+      launch charity‑aligned projects like the <strong>$GAZA</strong> token. Half of all
+      net profits are earmarked for organizations providing relief to Gaza.
+    </p>
+    <h3>Our Mission</h3>
+    <p>
+      1.&nbsp;Mobilise global supporters to fund humanitarian causes.<br />
+      2.&nbsp;Build transparent, community‑driven crypto projects.<br />
+      3.&nbsp;Donate <strong>50%</strong> of net profits to relief efforts.<br />
+    </p>
+  </main>
 
-<section class="section">
-  <h2>About MemeCon</h2>
-  <p>MemeCon unites meme creators, collectors and crypto fans.</p>
+  <footer>
+    <p>© 2025 GazaAid50. All rights reserved.</p>
+  </footer>
 
-  <h3>Our Mission</h3>
-  <p>
-    1.&nbsp;Celebrate internet culture.<br>
-    2.&nbsp;Launch charity-aligned projects like <strong>GazaAid 50 ($GAZA)</strong>.<br>
-    3.&nbsp;Donate <strong>50 %</strong> of profits to humanitarian relief.
-  </p>
-</section>
-
-<footer>
-  <p>© 2025 MemeCon. All rights reserved.</p>
-</footer>
-
-<script>
-document.addEventListener('DOMContentLoaded',()=>{
-  const btn=document.getElementById('menu-toggle');
-  const sidebar=document.getElementById('sidebar');
-  btn.addEventListener('click',()=>sidebar.classList.toggle('open'));
-  btn.addEventListener('mouseover',()=>sidebar.classList.add('open'));
-  sidebar.addEventListener('mouseleave',()=>sidebar.classList.remove('open'));
-  sidebar.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>sidebar.classList.remove('open')));
-});
-</script>
+  <!-- Sidebar toggle script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('menu-toggle');
+      const sidebar = document.getElementById('sidebar');
+      btn.addEventListener('click', () => sidebar.classList.toggle('open'));
+      btn.addEventListener('mouseover', () => sidebar.classList.add('open'));
+      sidebar.addEventListener('mouseleave', () => sidebar.classList.remove('open'));
+      sidebar.querySelectorAll('a').forEach(a =>
+        a.addEventListener('click', () => sidebar.classList.remove('open'))
+      );
+    });
+  </script>
 </body>
 </html>
