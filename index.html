@@ -25,26 +25,33 @@
   </ul>
 </nav>
 
+<!-- ── Hero with countdown ── -->
+<section class="section hero">
+  <h2>Token Launch Countdown</h2>
+  <div id="countdown" class="countdown">
+    <div class="time"><span id="days">00</span><span class="label">Days</span></div>
+    <div class="time"><span id="hours">00</span><span class="label">Hours</span></div>
+    <div class="time"><span id="minutes">00</span><span class="label">Minutes</span></div>
+    <div class="time"><span id="seconds">00</span><span class="label">Seconds</span></div>
+  </div>
+  <p class="launch-info">Our token goes live on <strong>August 11, 2025 at 4:00 PM CT</strong>. Join the countdown and be part of something big!</p>
+</section>
+
 <!-- ── Feature cards ── -->
 <section class="section features">
   <div class="feature">
     <h3>About MemeCon</h3>
     <p>Learn about our convention and mission to unify the meme community.</p>
-    <a class="button-link" href="about.html">Learn More</a>
   </div>
-
   <div class="feature">
     <h3>Donate &amp; Impact</h3>
     <p>50 % of profits will be donated to Gaza relief organisations.</p>
-    <a class="button-link" href="donate.html">Donate</a>
   </div>
-
   <div class="feature">
     <h3>GazaAid 50 Token ($GAZA)</h3>
     <p>Solana‑based token (launching soon) that routes half its net profits to humanitarian relief.</p>
     <a class="button-link" href="coin.html">Token Details</a>
   </div>
-
   <div class="feature">
     <h3>Roadmap &amp; Schedule</h3>
     <p>See our future phases and milestone achievements.</p>
@@ -69,12 +76,10 @@
 <!-- ── Roadmap / Schedule switcher ── -->
 <section id="roadmap" class="section">
   <h2>Future Roadmap &amp; Milestone Schedule</h2>
-
   <div class="tab-buttons">
     <button id="btn-roadmap" class="tab-btn active">Future Roadmap</button>
     <button id="btn-schedule" class="tab-btn">Milestone Schedule</button>
   </div>
-
   <!-- Roadmap content -->
   <div id="roadmap-content">
     <ol class="roadmap">
@@ -86,7 +91,6 @@
     </ol>
     <p class="roadmap-note">Timeline adjusts as milestones lock—stay tuned.</p>
   </div>
-
   <!-- Schedule content -->
   <div id="schedule-content" class="hidden">
     <ol class="timeline">
@@ -99,6 +103,16 @@
       <li><time datetime="2025-08-12">12 Aug 2025</time> · $GAZA community giveaway begins.</li>
       <li><time datetime="2025-08-15">15 Aug 2025</time> · Giveaway closes – 10‑20 $GAZA tokens awarded to early supporters.</li>
     </ol>
+  </div>
+</section>
+
+<!-- ── Call to Action ── -->
+<section id="cta" class="section cta">
+  <h2>Get Involved</h2>
+  <p>Interested in our mission? Learn more or contribute directly.</p>
+  <div class="cta-buttons">
+    <a class="button-link" href="about.html">Learn More</a>
+    <a class="button-link" href="donate.html">Donate</a>
   </div>
 </section>
 
@@ -118,7 +132,6 @@
 
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
-
   /* Sidebar */
   const btn=document.getElementById('menu-toggle');
   const sidebar=document.getElementById('sidebar');
@@ -126,21 +139,46 @@ document.addEventListener('DOMContentLoaded',()=>{
   btn.addEventListener('mouseover',()=>sidebar.classList.add('open'));
   sidebar.addEventListener('mouseleave',()=>sidebar.classList.remove('open'));
   sidebar.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>sidebar.classList.remove('open')));
-
   /* Tab switcher */
   const btnRoadmap=document.getElementById('btn-roadmap');
   const btnSchedule=document.getElementById('btn-schedule');
   const roadmapContent=document.getElementById('roadmap-content');
   const scheduleContent=document.getElementById('schedule-content');
-
   btnRoadmap.onclick=()=>{
-    btnRoadmap.classList.add('active');btnSchedule.classList.remove('active');
-    roadmapContent.classList.remove('hidden');scheduleContent.classList.add('hidden');
+    btnRoadmap.classList.add('active');
+    btnSchedule.classList.remove('active');
+    roadmapContent.classList.remove('hidden');
+    scheduleContent.classList.add('hidden');
   };
   btnSchedule.onclick=()=>{
-    btnSchedule.classList.add('active');btnRoadmap.classList.remove('active');
-    scheduleContent.classList.remove('hidden');roadmapContent.classList.add('hidden');
+    btnSchedule.classList.add('active');
+    btnRoadmap.classList.remove('active');
+    scheduleContent.classList.remove('hidden');
+    roadmapContent.classList.add('hidden');
   };
+  /* Countdown timer */
+  const daysEl=document.getElementById('days');
+  const hoursEl=document.getElementById('hours');
+  const minutesEl=document.getElementById('minutes');
+  const secondsEl=document.getElementById('seconds');
+  function updateCountdown(){
+    // Launch date in Central Time (America/Chicago). On Aug 11 2025, CT is CDT (UTC-05:00)
+    const launchDate=new Date('2025-08-11T16:00:00-05:00');
+    const now=new Date();
+    let diff=launchDate - now;
+    if(diff < 0){ diff = 0; }
+    const totalSeconds=Math.floor(diff/1000);
+    const days=Math.floor(totalSeconds/(3600*24));
+    const hours=Math.floor((totalSeconds % (3600*24))/3600);
+    const minutes=Math.floor((totalSeconds % 3600)/60);
+    const seconds=totalSeconds % 60;
+    daysEl.textContent=String(days).padStart(2,'0');
+    hoursEl.textContent=String(hours).padStart(2,'0');
+    minutesEl.textContent=String(minutes).padStart(2,'0');
+    secondsEl.textContent=String(seconds).padStart(2,'0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown,1000);
 });
 </script>
 </body>
