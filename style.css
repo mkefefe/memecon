@@ -18,12 +18,21 @@ header{
   position:fixed;top:0;left:0;right:0;padding:1rem 2rem;
   display:flex;justify-content:center;align-items:center;
   background:rgba(0,0,0,.8);z-index:1000;
+  gap:0.5rem;
 }
 header h1{margin:0;font-size:1.5rem;color:var(--primary)}
 header h1 a{color:inherit;text-decoration:none}
 .menu-toggle{
   position:absolute;left:1rem;top:1rem;font-size:1.8rem;
   background:none;border:none;color:var(--fg);cursor:pointer;
+}
+
+/* ---------- Logo ---------- */
+header img.logo{
+  width:48px;
+  height:auto;
+  margin-right:0.5rem;
+  border-radius:50%;
 }
 
 /* ---------- Sidebar ---------- */
@@ -95,6 +104,10 @@ ol.roadmap>li::before{counter-increment:phase;content:counter(phase)'.';position
 footer{background:#141414;color:#888;text-align:center;padding:1rem}
 footer a{color:var(--secondary);font-weight:700}
 footer a:hover{color:#118ab2}
+
+/* ---------- Community Links ---------- */
+#community a{color:var(--secondary);text-decoration:none;font-weight:600}
+#community a:hover{color:var(--primary)}
 
 /* ---------- Utility ---------- */
 .hidden{display:none}
