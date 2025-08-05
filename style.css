@@ -106,8 +106,20 @@ footer a{color:var(--secondary);font-weight:700}
 footer a:hover{color:#118ab2}
 
 /* ---------- Community Links ---------- */
-#community a{color:var(--secondary);text-decoration:none;font-weight:600}
-#community a:hover{color:var(--primary)}
+/* Style community section links to match the site palette. Use selectors for
+   link and visited states so that default browser colours (blue/purple) are
+   overridden. */
+#community a:link,
+#community a:visited{
+  color:var(--secondary);
+  text-decoration:none;
+  font-weight:600;
+}
+#community a:hover{
+  color:var(--primary);
+}
+/* Remove bullet styling on the social links list for a cleaner look */
+#community ul{list-style:none;padding-left:0;margin-left:0;}
 
 /* ---------- Utility ---------- */
 .hidden{display:none}
