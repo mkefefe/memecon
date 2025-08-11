@@ -38,7 +38,7 @@
     <div class="time"><span id="minutes">00</span><span class="label">Minutes</span></div>
     <div class="time"><span id="seconds">00</span><span class="label">Seconds</span></div>
   </div>
-  <p class="launch-info">Our token goes live on <strong>August 11, 2025 at 4:00 PM CT</strong>. Join the countdown and be part of something big!</p>
+  <p class="launch-info">Our token goes live on <strong>August 13, 2025 at 4:00 PM CT</strong>. Join the countdown and be part of something big!</p>
   <!-- Buy button: Disabled until launch; behaviour controlled via script -->
   <button id="buy-btn" class="button-link">Buy</button>
 </section>
@@ -71,8 +71,8 @@
   <div id="roadmap-content">
     <ol class="roadmap">
       <li><strong>Phase 1 – 31 Jul 2025 · Website Launch</strong> – Kick‑off &amp; team recruitment.</li>
-      <li><strong>Phase 2 – 11 Aug 2025 · Token Launch</strong> – $GAZA trading opens; ads start 7 Aug.</li>
-      <li><strong>Phase 3 – 12 Aug 2025 · Community Giveaway</strong> – Free token airdrop.</li>
+      <li><strong>Phase 2 – 13 Aug 2025 · Token Launch</strong> – $GAZA trading opens; ads start 7 Aug.</li>
+      <li><strong>Phase 3 – 14 Aug 2025 · Community Giveaway</strong> – Free token airdrop.</li>
       <li><strong>Phase 4 – Q4 2025 · 50% Profit Donation Event</strong> – Livestream NGO transfers.</li>
       <li><strong>Phase 5 – 2026 · Partnerships &amp; Expansion</strong></li>
     </ol>
@@ -83,12 +83,12 @@
     <ol class="timeline">
       <li class="done"><time datetime="2025-07-29">29 Jul 2025</time> · Telegram group, X profile &amp; community channels created.</li>
       <li class="done"><time datetime="2025-07-31">31 Jul 2025</time> · Official website launched.</li>
-      <li><time datetime="2025-08-05">05 Aug 2025</time> · Achieved 300+ Telegram members—team effort recognised.</li>
-      <li><time datetime="2025-08-06">06 Aug 2025</time> · Launch of paid advertising campaign.</li>
-      <li><time datetime="2025-08-09">09 Aug 2025</time> · Target engagement day on X (Twitter); community push.</li>
-      <li><time datetime="2025-08-11">11 Aug 2025</time> · DEX screen live · 10× website update · intensive promotion (AI volume simulation).</li>
-      <li><time datetime="2025-08-12">12 Aug 2025</time> · $GAZA community giveaway begins.</li>
-      <li><time datetime="2025-08-15">15 Aug 2025</time> · Giveaway closes – 10‑20 $GAZA tokens awarded to early supporters.</li>
+      <li class="done"><time datetime="2025-08-05">05 Aug 2025</time> · Achieved 300+ Telegram members—team effort recognised.</li>
+      <li class="done"><time datetime="2025-08-06">06 Aug 2025</time> · Launch of paid advertising campaign.</li>
+      <li class="done"><time datetime="2025-08-09">09 Aug 2025</time> · Target engagement day on X (Twitter); community push.</li>
+      <li><time datetime="2025-08-13">13 Aug 2025</time> · DEX screen live · 10× website update · intensive promotion (AI volume simulation).</li>
+      <li><time datetime="2025-08-14">14 Aug 2025</time> · $GAZA community giveaway begins.</li>
+      <li><time datetime="2025-08-17">17 Aug 2025</time> · Giveaway closes – 10‑20 $GAZA tokens awarded to early supporters.</li>
     </ol>
   </div>
 </section>
@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   const secondsEl=document.getElementById('seconds');
   // Buy button element and launch date accessible to both countdown and buy logic
   const buyBtn=document.getElementById('buy-btn');
-  const launchDate=new Date('2025-08-11T16:00:00-05:00');
+  const launchDate=new Date('2025-08-13T16:00:00-05:00');
   function updateCountdown(){
     const now=new Date();
     let diff=launchDate - now;
@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     if(launchDate - now > 0){
       // Not launched yet – notify user of launch time
       buyBtn.onclick=()=>{
-        alert('Token not launched yet! The $GAZA token launches on August 11, 2025 at 4:00 PM CT (UTC‑05:00).');
+        alert('Token not launched yet! The $GAZA token launches on August 13, 2025 at 4:00 PM CT (UTC‑05:00).');
       };
     }else{
       // Launch occurred – redirect to pump.fun when clicked
